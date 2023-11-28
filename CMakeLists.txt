@@ -71,11 +71,11 @@ endif()
 # Prepare includes
 set(APP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}")
 list(APPEND APP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include")
-list(APPEND APP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/extern/spice/include")
+list(APPEND APP_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/extern/Spice/include")
 include_directories(${APP_INCLUDE_DIRS})
 
 # Add JPL Ephemeris library
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/extern/spice")
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/extern/Spice")
 
 target_sources(CppSpice
     PRIVATE
@@ -87,4 +87,4 @@ target_sources(CppSpice
 )
 
 # Link CSpice to CppSpice
-target_link_libraries(CppSpice PRIVATE Spice)
+target_link_libraries(CppSpice PRIVATE spice)
